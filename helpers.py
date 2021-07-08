@@ -9,30 +9,30 @@ def gerar_palavra_secreta ():
         palavra = f_obj.read().splitlines()
 
     return random.choice(palavra)
- def verificar_palavra_randomica (palavra_secreta,suas_tentativas,tentativas):
-   """
-   Verifica se a letra dada está correta
-   :param palavra_secreta: Gerada co base nos arquivo palavras secretas
-   :param suas_tentativas: Lista com todas as tentativas
-   :param tentativas: letra inserida nessa jogada
-   :return: retorna um status - acerto ou erro
-   """
-   status= '' # O status precisa ser zerado a cada chamada da função
-   acertos='' # Acertos precisa ser zerado a cada tentativa/jogada
+def verificar_palavra_randomica (palavra_secreta,suas_tentativas,tentativa):
+    """
+    Verifica se a letra dada está correta
+    :param palavra_secreta: Gerada co base nos arquivo palavras secretas
+    :param suas_tentativas: Lista com todas as tentativas
+    :param tentativas: letra inserida nessa jogada
+    :return: retorna um status - acerto ou erro
+    """
+    status= '' #status precisa ser zerado a cada chamada da função
+    acertos= 0 # Acertos precisa ser zerado a cada tentativa/jogada
 
-   for letra in palavra_secreta:
+    for letra in palavra_secreta:
        if letra.lower() in suas_tentativas:
            status += letra
        else:
            status += '*'
 
-       if letra.lower() == tentativa.lower()
+       if letra.lower() == tentativa.lower():
            acertos += 1
 
-   print(f"\nAcertou {acertos} letra(s), {'tentativa'}")
-   return status
+    print(f"\nAcertou {acertos} letra(s), {'tentativa'}")
+    return status
 
- def total_tentativas(palavra_secreta):
+def total_tentativas(palavra_secreta):
      """
      Define o total de tentativas de acordo a palavra secreta
      :param palavra_secreta: gerala aleatoriamente
