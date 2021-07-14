@@ -1,5 +1,5 @@
 
-from helpers import gerar_palavra_secreta
+from helpers import gerar_palavra_secreta,jogo
 if __name__ == '__main__':
     palavra_secreta = gerar_palavra_secreta()
     # For looping que imprima a palavra escondida com *******
@@ -10,5 +10,8 @@ if __name__ == '__main__':
     #Calculando o tamanho da palavra
     tamanho_da_palavra = len(palavra_secreta)
     print(f"\nA palavra tem {tamanho_da_palavra} letras")
+
+    jogo(palavra_secreta)
+
 
 
